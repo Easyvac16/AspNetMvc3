@@ -1,0 +1,45 @@
+﻿@model FractionsOperationViewModel;
+@{
+    ViewData["Title"] = "Fractions";
+
+}
+
+<h2>
+    @ViewData["Title"]
+</h2>
+
+
+<form asp-action="Calculate" method="post">
+    <div>
+        <div>
+            <label for="numenator1">nUmenator here!</label>
+            <input type="number" name="Fraction1.Numenator" value="@Model.Fractions1.Numenator" required />
+            <label for="denominator1">dEnominator here!</label>
+            <input type="number" name="Fraction1.Denominator" value="@Model.Fractions1.Denominator" required />
+        </div>
+        <div>
+
+            <label for="numenator2">nUmenator here!</label>
+            <input type="number" name="Fraction2.Numenator" value="@Model.Fractions2.Numenator" required />
+            <label for="denominator2">dEnominator here!</label>
+            <input type="number" name="Fraction2.Denominator" value="@Model.Fractions2.Denominator" required />
+        </div>
+        <div>
+            <label for="operation">Operation:</label>
+            <select name="operation" id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+        </div>
+
+        <button type="submit">Submit</button>
+
+    </div>
+</form>
+
+@if (Model.Result != null)
+{
+    <h1>RESULT: @Model.Result</h1>
+}

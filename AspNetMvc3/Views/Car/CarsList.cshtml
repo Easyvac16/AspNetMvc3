@@ -1,0 +1,15 @@
+﻿@model List<Car>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Cars List</h1>
+<ul>
+    @foreach (var car in Model)
+    {
+        <li>
+            Name: @car.Name, Color: @car.Color, Manufacturer: @car.Manufacturer, Year: @car.Year, Engine: @car.EngineSize
+        </li>
+    }
+</ul>
